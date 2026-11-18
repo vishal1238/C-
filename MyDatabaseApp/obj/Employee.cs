@@ -1,6 +1,6 @@
 using Microsoft.Data.Sqlite;
 
-string connectionString = "Data Source=college.db";
+string connectionString = "Data Source=employee.db";
 
 // Connect to the database (creates the file if it doesn't exist)
 using var connection = new SqliteConnection(connectionString);
@@ -14,9 +14,9 @@ using (var resetCommand = new SqliteCommand("DROP TABLE IF EXISTS Students;", co
 
 // Create a table
 string createTable = @"
-CREATE TABLE IF NOT EXISTS Students (
-    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-    Name TEXT NOT NULL,
+CREATE TABLE IF NOT EXISTS EMPLOYEES (
+    Employee_Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Employee_Name TEXT NOT NULL,
     Email TEXT NOT NULL,
     Age INTEGER NOT NULL,
     Course TEXT NOT NULL,
